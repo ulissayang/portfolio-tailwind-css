@@ -7,6 +7,14 @@ hamburger.addEventListener("click", function () {
   navMenu.classList.toggle("hidden");
 });
 
+//klik di luar hamburger
+window.addEventListener("click", function (e) {
+  if (e.target != hamburger && e.target != navMenu) {
+    hamburger.classList.remove("hamburger-active");
+    navMenu.classList.add("hidden");
+  }
+});
+
 //navbar fixed
 window.onscroll = function () {
   const header = document.querySelector("header");
